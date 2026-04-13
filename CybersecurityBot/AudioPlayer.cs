@@ -1,4 +1,5 @@
 // handles voice greeting audio playback
+using System.IO;
 using System.Media;
 
 static class AudioPlayer
@@ -8,8 +9,9 @@ static class AudioPlayer
     {
         try
         {
-            // create player pointing to the greeting wav file
-            SoundPlayer player = new SoundPlayer("assets/sound.wav");
+            string baseDir = AppContext.BaseDirectory;
+            string wavPath = Path.Combine(baseDir, "assets", "sound.wav");
+            SoundPlayer player = new SoundPlayer(wavPath);
 
             // play synchronously so greeting finishes before the banner appears
             player.PlaySync();
