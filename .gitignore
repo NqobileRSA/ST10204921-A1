@@ -1,0 +1,12 @@
+# .NET build outputs
+bin/
+obj/
+*.user
+*.suo
+
+# Visual Studio
+.vs/
+*.sln.docstates
+
+# macOS
+.DS_Store
